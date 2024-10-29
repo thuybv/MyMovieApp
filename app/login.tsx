@@ -3,8 +3,8 @@ import {router} from 'expo-router';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 
-import {BackGround} from '../../components/BackGround';
-import IconLogo from '../../components/icons/Logo';
+import {BackGround} from '../components/BackGround';
+import IconLogo from '../components/icons/Logo';
 
 const LoginScreen = () => {
   return (

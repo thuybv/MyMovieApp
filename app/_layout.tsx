@@ -4,6 +4,9 @@ import {useFonts} from 'expo-font';
 import {SplashScreen, Stack} from 'expo-router';
 import {useEffect} from 'react';
 import {useColorScheme} from 'react-native';
+import {Provider} from 'react-redux';
+
+import {store} from '../store/store';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -47,12 +50,12 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      {/* <Provider store={store}> */}
-      <Stack
-        screenOptions={{headerShown: false}}
-        initialRouteName="/app/login"
-      />
-      {/* </Provider> */}
+      <Provider store={store}>
+        <Stack screenOptions={{headerShown: false}} initialRouteName="index">
+          <Stack.Screen name="index" />
+          <Stack.Screen name="allmovies" />
+        </Stack>
+      </Provider>
     </ThemeProvider>
   );
 }
